@@ -58,50 +58,6 @@ router.get('/nfts', async (req, res) => {
   return res.status(200).json({ nfts });
 });
 
-router.post('/add-nft', async (req, res) => {
-  const nft = await NFT.create({
-    imageUrl:
-      'https://lh3.googleusercontent.com/W_Qm1jEp6LZHm19CSJOKi-P-kZoPXb3nnyAOQsKsblU0D345ZuURZQRvn0hb9PvmrsMZ1Nrot_tCMiF_acFpiQtgmiz9a7GIyYH0',
-    name: 'Ninja Mfer #4175',
-    collectionName: 'Ninja mfers Official',
-    openseaLink: 'https://opensea.io/assets/0xfb3cf61a46a565fb1622ec5f9d42d98ff7f762aa/4175',
-    traits: JSON.stringify([
-      {
-        type: 'Background',
-        value: 'Blue',
-        count: 626,
-      },
-      {
-        type: 'Face',
-        value: 'Foolish',
-        count: 58,
-      },
-      {
-        type: 'Gender',
-        value: 'Female',
-        count: 427,
-      },
-      {
-        type: 'Weapon',
-        value: 'Wings',
-        count: 427,
-      },
-      {
-        type: 'Body',
-        value: 'Coveralls',
-        count: 59,
-      },
-      {
-        type: 'Hat',
-        value: 'Bird Nest',
-        count: 64,
-      },
-    ]),
-    collectionSupply: 4444,
-  });
-  return res.status(200).json({ nft });
-});
-
 app.use('/api', router);
 
 module.exports = app;
